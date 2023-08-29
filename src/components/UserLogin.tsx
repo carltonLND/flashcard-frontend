@@ -1,3 +1,4 @@
+import { server } from "../core/requests";
 import { useEffect, useState } from "react";
 import { User } from "../types/IUser";
 import {
@@ -19,17 +20,21 @@ function UserLogin({ setUser }: UserLoginProps) {
   const [newUserInput, setNewUserInput] = useState("");
 
   const handleNewUserSubmit = async () => {
-    // IF newUserInput is not an empty string
     if (newUserInput === "") return;
-    // Send a request
-    // IF response status is 201
-    // THEN
-    setUser(newUserInput);
+
+    const response = await server.post("/users", { name: newUserInput });
+    if (response.status === 201) {
+      setUser(newUserInput);
+    }
   };
 
   useEffect(() => {
-    // TODO: Fetch the users from the backend
-    setUserList(["Carlton", "Ana", "Neill", "Beth"]);
+    async function getUserList() {
+      const response = await server.get("/users");
+      setUserList(response.data);
+    }
+
+    getUserList();
   }, []);
 
   return (
@@ -39,9 +44,9 @@ function UserLogin({ setUser }: UserLoginProps) {
           <option selected disabled value="">
             Select User
           </option>
-          {userList.map((u, i) => (
-            <option key={i} value={u}>
-              {u}
+          {userList.map((user) => (
+            <option key={user.id} value={user.name}>
+              {user.name}
             </option>
           ))}
         </Select>
