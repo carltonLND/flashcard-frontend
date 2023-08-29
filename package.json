@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "tsc && vite build",
-    "start": "vite --port 3000",
+    "start": "vite --mode development --port 3000",
+    "start:prod": "vite --mode production --port 3000",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint --max-warnings=0 .",
