@@ -1,5 +1,4 @@
 import { Button } from "@chakra-ui/react";
-import "./App.css";
 import UserLogin from "./UserLogin";
 import { useState } from "react";
 
