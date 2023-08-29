@@ -1,4 +1,4 @@
-import { ChakraProvider } from "@chakra-ui/react";
+import { Button, ChakraProvider } from "@chakra-ui/react";
 import "./App.css";
 import UserLogin from "./UserLogin";
 import { useState } from "react";
@@ -11,7 +11,10 @@ function App() {
       {user === "" ? (
         <UserLogin setUser={setUser} />
       ) : (
-        <h1>WE ARE LOGGED IN AS {user}</h1>
+        <>
+          <h1>WE ARE LOGGED IN AS {user}</h1>
+          <Button onClick={() => setUser("")}>LOGOUT</Button>
+        </>
       )}
     </ChakraProvider>
   );
