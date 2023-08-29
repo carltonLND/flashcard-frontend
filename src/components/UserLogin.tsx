@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { User } from "../types/IUser";
 import {
-  Box,
   Button,
   Center,
   Divider,
@@ -35,13 +34,7 @@ function UserLogin({ setUser }: UserLoginProps) {
 
   return (
     <HStack justifyContent={"space-evenly"} height={"100vh"}>
-      <Box
-        display={"flex"}
-        flexDirection={"column"}
-        justifyContent={"center"}
-        alignItems={"center"}
-        gap={"1em"}
-      >
+      <Center flexDirection={"column"} gap={"1em"}>
         <Select onChange={(e) => setSelectedUser(e.target.value)}>
           <option selected disabled value="">
             Select User
@@ -53,24 +46,18 @@ function UserLogin({ setUser }: UserLoginProps) {
           ))}
         </Select>
         <Button onClick={() => setUser(selectedUser)}>LOGIN</Button>
-      </Box>
+      </Center>
       <Center height="50%">
         <Divider orientation="vertical" />
       </Center>
-      <Box
-        display={"flex"}
-        flexDirection={"column"}
-        justifyContent={"center"}
-        alignItems={"center"}
-        gap={"1em"}
-      >
+      <Center flexDirection={"column"} gap={"1em"}>
         <Input
           onChange={(e) => setNewUserInput(e.target.value.slice(0, 20))}
           value={newUserInput}
           placeholder="Your name..."
         />
         <Button onClick={handleNewUserSubmit}>SIGNUP</Button>
-      </Box>
+      </Center>
     </HStack>
   );
 }
