@@ -1,8 +1,8 @@
 export interface UserCandidate {
-  name: string;
+    name: string;
 }
 
 export interface User extends UserCandidate {
-  id: number;
-  created_at: Date;
+    id: number;
+    created_at: Date;
 }

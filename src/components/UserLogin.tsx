@@ -1,6 +1,6 @@
 import { server } from "../core/requests";
 import { useEffect, useState } from "react";
-import { User } from "../types/IUser";
+import { User } from "../types/user";
 import {
   Button,
   Center,

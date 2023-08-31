@@ -1,6 +1,6 @@
 import UserLogin from "./UserLogin";
 import { useState } from "react";
-import { User } from "../types/IUser";
+import { User } from "../types/user";
 import PageHeader from "./PageHeader";
 
 function App() {

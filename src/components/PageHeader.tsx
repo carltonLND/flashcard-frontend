@@ -5,7 +5,7 @@ import {
   Stack,
   useColorMode,
 } from "@chakra-ui/react";
-import { User } from "../types/IUser";
+import { User } from "../types/user";
 
 interface PageHeaderProps {
   userName: string;
