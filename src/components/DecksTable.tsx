@@ -30,10 +30,10 @@ function DecksTable({ deckList }: DecksTableProps): JSX.Element {
   ));
 
   return (
-    <TableContainer>
-      <Table variant="simple">
+    <TableContainer display={"grid"} placeItems={"center"} p={5}>
+      <Table variant="simple" maxWidth={"min-content"} minWidth={"50%"}>
+        <TableCaption>Total number of decks: {deckList.length}</TableCaption>
         <Tbody>{tableRows}</Tbody>
-        <TableCaption>Imperial to metric conversion factors</TableCaption>
       </Table>
     </TableContainer>
   );

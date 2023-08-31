@@ -2,6 +2,7 @@ import UserLogin from "./UserLogin";
 import { useState } from "react";
 import { User } from "../types/user";
 import PageHeader from "./PageHeader";
+import DecksView from "./DecksView";
 
 function App() {
   const [user, setUser] = useState<User | null>(null);
@@ -13,6 +14,7 @@ function App() {
       ) : (
         <>
           <PageHeader userName={user.name} setUser={setUser} />
+          <DecksView user={user} />
         </>
       )}
     </>

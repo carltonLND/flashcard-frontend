@@ -8,6 +8,7 @@ interface DecksViewProps {
   user: User;
 }
 
+// @ts-ignore
 function DecksView({ user }: DecksViewProps): JSX.Element {
   const [deckList, setDeckList] = useState<Deck[]>([]);
 
