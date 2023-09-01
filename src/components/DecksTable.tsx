@@ -11,20 +11,28 @@ import { Deck } from "../types/deck";
 
 interface DecksTableProps {
   deckList: Deck[];
+  onPracticeDeck: (id: number) => void;
+  onEditDeck: (id: number) => void;
+  onDeleteDeck: (id: number) => void;
 }
 
-function DecksTable({ deckList }: DecksTableProps): JSX.Element {
+function DecksTable({
+  deckList,
+  onPracticeDeck,
+  onEditDeck,
+  onDeleteDeck,
+}: DecksTableProps): JSX.Element {
   const tableRows = deckList.map((deck) => (
     <Tr key={deck.id}>
       <Td>{deck.name}</Td>
       <Td>
-        <Button>Practice</Button>
+        <Button onClick={() => onPracticeDeck(deck.id)}>Practice</Button>
       </Td>
       <Td>
-        <Button>Edit</Button>
+        <Button onClick={() => onEditDeck(deck.id)}>Edit</Button>
       </Td>
       <Td>
-        <Button>Delete</Button>
+        <Button onClick={() => onDeleteDeck(deck.id)}>Delete</Button>
       </Td>
     </Tr>
   ));

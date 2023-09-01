@@ -12,4 +12,3 @@ export interface Deck extends DeckCandidate {
 export interface DeckContent extends Deck {
   cards: CardWithStreak[];
 }
-// export { CardWithStreak };
