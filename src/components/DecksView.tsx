@@ -1,12 +1,4 @@
-import {
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalHeader,
-  ModalOverlay,
-  useDisclosure,
-} from "@chakra-ui/react";
+import { useDisclosure } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { server } from "../core/requests";
 import { Deck } from "../types/deck";
@@ -14,6 +6,7 @@ import { User } from "../types/user";
 import DecksTable from "./DecksTable";
 import EditView from "./EditView";
 import NewDeck from "./NewDeck";
+import PracticeView from "./PracticeView";
 
 interface DecksViewProps {
   user: User;
@@ -48,6 +41,11 @@ function DecksView({ user }: DecksViewProps): JSX.Element {
     onOpenEdit();
   };
 
+  const onPractice = (id: number) => {
+    setDeckId(id);
+    onOpenPractice();
+  };
+
   const onDelete = async (id: number) => {
     setDeckList((prev) => prev.filter((deck) => deck.id !== id));
     await server.delete(`/decks/${id}`);
@@ -64,7 +62,7 @@ function DecksView({ user }: DecksViewProps): JSX.Element {
       <NewDeck onSubmit={onNewDeck} />
       <DecksTable
         deckList={deckList}
-        onPracticeDeck={onOpenPractice}
+        onPracticeDeck={onPractice}
         onEditDeck={onEdit}
         onDeleteDeck={onDelete}
       ></DecksTable>
@@ -78,17 +76,14 @@ function DecksView({ user }: DecksViewProps): JSX.Element {
           setDeckList={setDeckList}
         />
       )}
-
-      <Modal isOpen={isOpenPractice} onClose={onClosePractice} size={"full"}>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Modal Title</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
-            <h1>PRACTICE MODAL</h1>
-          </ModalBody>
-        </ModalContent>
-      </Modal>
+      {isOpenPractice && (
+        <PracticeView
+          userId={user.id}
+          deckId={deckId as number}
+          isOpen={isOpenPractice}
+          onClose={onClosePractice}
+        />
+      )}
     </>
   );
 }
