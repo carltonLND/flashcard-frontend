@@ -7,6 +7,7 @@ import {
   ModalBody,
   Heading,
   Divider,
+  AbsoluteCenter,
 } from "@chakra-ui/react";
 import { DeckContent } from "../types/deck";
 import { useEffect, useMemo, useState } from "react";
@@ -89,7 +90,11 @@ function PracticeView({ isOpen, onClose, deckId, userId }: PracticeViewProps) {
                   onWrong={onWrong}
                 />
               ) : (
-                <Heading>There are no cards to review from this deck</Heading>
+                <AbsoluteCenter>
+                  <Heading>
+                    There are no cards to review from this deck!
+                  </Heading>
+                </AbsoluteCenter>
               )}
             </ModalBody>
           </>
