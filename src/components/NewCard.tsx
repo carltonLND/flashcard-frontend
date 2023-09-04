@@ -1,4 +1,13 @@
-import { Button, Table, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/react";
+import {
+  Button,
+  Input,
+  Table,
+  Tbody,
+  Td,
+  Th,
+  Thead,
+  Tr,
+} from "@chakra-ui/react";
 import { useState } from "react";
 import { server } from "../core/requests";
 
@@ -37,15 +46,15 @@ function NewCard({ deckId, getDeck }: NewCardProps) {
       <Tbody>
         <Tr>
           <Td>
-            <input
-              style={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
+            <Input
+              width={"min-content"}
               onChange={(e) => setQuestionInput(e.target.value.slice(0, 255))}
               value={questionInput}
             />
           </Td>
           <Td>
-            <input
-              style={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
+            <Input
+              width={"min-content"}
               onChange={(e) => setAnswerInput(e.target.value.slice(0, 255))}
               value={answerInput}
             />
