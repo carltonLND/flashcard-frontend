@@ -21,6 +21,7 @@ function DecksView({ user }: DecksViewProps): JSX.Element {
     onOpen: onOpenEdit,
     onClose: onCloseEdit,
   } = useDisclosure();
+
   const {
     isOpen: isOpenPractice,
     onOpen: onOpenPractice,
@@ -76,6 +77,7 @@ function DecksView({ user }: DecksViewProps): JSX.Element {
           setDeckList={setDeckList}
         />
       )}
+
       {isOpenPractice && (
         <PracticeView
           userId={user.id}

@@ -27,6 +27,7 @@ function CardsTable({ deckId, cardList, setDeck, getDeck }: CardsTableProps) {
       const updatedCards = prev.cards.filter((card) => card.id !== id);
       return { ...prev, cards: updatedCards };
     });
+
     await server.delete(`/cards/${id}`);
   };
 

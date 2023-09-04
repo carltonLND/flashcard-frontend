@@ -13,16 +13,3 @@ export interface Card extends CardCandidate {
 
 export type CardWithStreak = Omit<Card, "deck_id"> &
   Pick<Streak, "streak"> & { needs_review: boolean };
-
-// Equivalent to:
-//
-// interface CardWithStreak {
-//     id: number;
-//     question: string;
-//     answer: string;
-//     created_at: Date;
-//
-//     streak: number;
-//
-//     need_review: boolean;
-// }

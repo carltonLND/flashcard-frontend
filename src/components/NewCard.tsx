@@ -24,13 +24,16 @@ function NewCard({ deckId, getDeck }: NewCardProps) {
     if (questionInput === "" || answerInput === "") return;
     const question = questionInput;
     const answer = answerInput;
+
     setQuestionInput("");
     setAnswerInput("");
+
     await server.post("/cards", {
       question,
       answer,
       deck_id: deckId,
     });
+
     await getDeck();
   };
 
