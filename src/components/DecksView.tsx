@@ -69,13 +69,15 @@ function DecksView({ user }: DecksViewProps): JSX.Element {
         onDeleteDeck={onDelete}
       ></DecksTable>
 
-      <EditView
-        isOpen={isOpenEdit}
-        onClose={onCloseEdit}
-        userId={user.id}
-        deckId={deckId as number}
-        setDeckList={setDeckList}
-      />
+      {isOpenEdit && (
+        <EditView
+          isOpen={isOpenEdit}
+          onClose={onCloseEdit}
+          userId={user.id}
+          deckId={deckId as number}
+          setDeckList={setDeckList}
+        />
+      )}
 
       <Modal isOpen={isOpenPractice} onClose={onClosePractice} size={"full"}>
         <ModalOverlay />

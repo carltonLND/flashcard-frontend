@@ -2,7 +2,7 @@ import { Button, Center, HStack, Input } from "@chakra-ui/react";
 import { useState } from "react";
 
 interface NewDeckProps {
-  onSubmit: (name: string) => void;
+  onSubmit: (name: string) => Promise<void>;
 }
 
 function NewDeck({ onSubmit }: NewDeckProps) {
@@ -15,7 +15,14 @@ function NewDeck({ onSubmit }: NewDeckProps) {
           onChange={(e) => setNewDeckInput(e.target.value.slice(0, 40))}
           value={newDeckInput}
         />
-        <Button onClick={() => onSubmit(newDeckInput)}>Add Deck</Button>
+        <Button
+          onClick={() => {
+            onSubmit(newDeckInput);
+            setNewDeckInput("");
+          }}
+        >
+          Add Deck
+        </Button>
       </HStack>
     </Center>
   );
