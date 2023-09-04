@@ -59,32 +59,32 @@ See [package.json](package.json) for other scripts.
 
 ## Feature summary
 
--   React app (hot-reloaded when you make changes)
--   TypeScript
--   ESLint and custom config
--   Formatting with prettier
--   Testing with
-    -   vitest (jest-equivalent) and
-    -   react-testing-library
--   CI with GitHub Actions
--   vscode default build task configured (in tasks.json) to type-check and lint to problems list
--   vscode debugger launch config
--   Vite
-    -   Type-checking and linting errors presented into the browser (vite-plugin-checker)
--   As little other junk as possible
+- React app (hot-reloaded when you make changes)
+- TypeScript
+- ESLint and custom config
+- Formatting with prettier
+- Testing with
+  - vitest (jest-equivalent) and
+  - react-testing-library
+- CI with GitHub Actions
+- vscode default build task configured (in tasks.json) to type-check and lint to problems list
+- vscode debugger launch config
+- Vite
+  - Type-checking and linting errors presented into the browser (vite-plugin-checker)
+- As little other junk as possible
 
 ## Attaching the vscode javascript debugger to your react app (in dev)
 
 (This is meant as an optional alternative to the excellent chrome devtools.)
 
--   Start the dev server (e.g. yarn start)
--   In vscode, switch to the "Run and debug" tab from the side menu
--   At the top, click the green play button entitled "Launch Chrome against localhost"
-    -   Browser should also launch, eventually
--   Add breakpoint(s) to your react code in vscode, or add the `debugger` keyword
--   Interact with the React app so that your breakpoints / `debugger` keyword are encountered.
--   vscode's debugger should now present you with the local variables, the call stack, etc.
--   Use the transport controls at the top to step through your code or continue execution
+- Start the dev server (e.g. yarn start)
+- In vscode, switch to the "Run and debug" tab from the side menu
+- At the top, click the green play button entitled "Launch Chrome against localhost"
+  - Browser should also launch, eventually
+- Add breakpoint(s) to your react code in vscode, or add the `debugger` keyword
+- Interact with the React app so that your breakpoints / `debugger` keyword are encountered.
+- vscode's debugger should now present you with the local variables, the call stack, etc.
+- Use the transport controls at the top to step through your code or continue execution
 
 ## Alternative to vite-plugin-checker
 
@@ -96,6 +96,6 @@ If you don't want to use vite-plugin-checker but you do want to get type-checkin
 
 ## Misc notes on Vite
 
--   [Vite guide](https://vitejs.dev/guide/)
--   [About the `public` directory](https://vitejs.dev/guide/assets.html#the-public-directory)
--   [Vite powerful React project setup](https://dev.to/equiman/vite-powerful-react-project-g4m) (Camilo Martinez)
+- [Vite guide](https://vitejs.dev/guide/)
+- [About the `public` directory](https://vitejs.dev/guide/assets.html#the-public-directory)
+- [Vite powerful React project setup](https://dev.to/equiman/vite-powerful-react-project-g4m) (Camilo Martinez)
