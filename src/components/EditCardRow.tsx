@@ -25,6 +25,7 @@ function EditCardRow({ card, onDelete }: EditCardRowProps) {
       <Td>
         <Input
           width={"min-content"}
+          variant={"filled"}
           onChange={(e) => setQuestionInput(e.target.value.slice(0, 255))}
           value={questionInput}
         />
@@ -32,6 +33,7 @@ function EditCardRow({ card, onDelete }: EditCardRowProps) {
       <Td>
         <Input
           width={"min-content"}
+          variant={"filled"}
           onChange={(e) => setAnswerInput(e.target.value.slice(0, 255))}
           value={answerInput}
         />

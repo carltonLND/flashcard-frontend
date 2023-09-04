@@ -48,6 +48,8 @@ function NewCard({ deckId, getDeck }: NewCardProps) {
           <Td>
             <Input
               width={"min-content"}
+              variant={"filled"}
+              placeholder="Type a question..."
               onChange={(e) => setQuestionInput(e.target.value.slice(0, 255))}
               value={questionInput}
             />
@@ -55,6 +57,8 @@ function NewCard({ deckId, getDeck }: NewCardProps) {
           <Td>
             <Input
               width={"min-content"}
+              variant={"filled"}
+              placeholder="Type an answer..."
               onChange={(e) => setAnswerInput(e.target.value.slice(0, 255))}
               value={answerInput}
             />
